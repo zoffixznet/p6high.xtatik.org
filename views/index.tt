@@ -28,6 +28,9 @@
                 value="Highlight">
         </div>
     </form>
+
+    <p>Sample:</p>
+    <%= $h<code> %>
 </div>
 
 </body>
