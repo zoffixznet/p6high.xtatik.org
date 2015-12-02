@@ -1,0 +1,34 @@
+% my ($h) = @_;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Perl 6 Syntax-Highlighted HTML Generator</title>
+    <link rel="stylesheet" href="/public/scss/bootstrap.min.css">
+</head>
+<body>
+
+<script src="/public/js/jquery.min.js"></script>
+<script src="/public/js/bootstrap.min.js"></script>
+
+<div class="container">
+    <h1>Perl 6 Syntax-Highlighted HTML Generator</h1>
+
+    <form action="/" method="POST">
+        <div class="form-group">
+            <label for="code">Enter your Perl 6 code to highlight:</label>
+            <textarea name="code" id="code" cols="30" rows="10"
+                class="form-control"><%= $h<code> %></textarea>
+        </div>
+        <div class="form-group">
+            <input type="submit" class="btn btn-lg btn-primary"
+                value="Highlight">
+        </div>
+    </form>
+</div>
+
+</body>
+</html>
