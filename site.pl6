@@ -54,4 +54,12 @@ get /^ '/' ('public/' [scss|js] '/'  \w+  '.min'?)  \.(\w ** 2..3)$/
     status 404; return "File not found";
 };
 
+get /^ '/' ('public/pics/' \w+)  \.(\w ** 2..3)$/ => sub ($file, $ext) {
+    content_type $MIME.type($ext) // "application/octet-stream";
+    warn "Fetching $file.$ext";
+    return slurp "$file.$ext", :bin if "$file.$ext".IO.f;
+    status 404; return "File not found";
+};
+
+
 baile;
